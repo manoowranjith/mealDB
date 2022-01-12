@@ -1,0 +1,46 @@
+<body class="login-page">
+    <div class="login">
+        <div class="greeting">
+            <h1><i class="fas fa-hamburger"></i> MealDB</h1>
+        </div>
+        <div class="login-mode">
+            <h3 (click)="signin()" id="signin" >Signin</h3>
+            <h3 (click)="signup()" id="signup">Signup</h3>
+        </div>
+        <form *ngIf="issignin" [formGroup]="submitForm" action="" >
+            <div class="credential">
+                <div class="inpEmail">
+                    <div class="errmsg">{{emailERR}}</div>
+                    <input  id="username" formControlName="email" type="email" autocomplete="off" placeholder="Username" (click)="emptyERR()">
+                </div>
+                <div class="inppass">
+                    <div  class="errmsg">{{passwordERR}}</div>
+                    <input formControlName="password" type="password" autocomplete="off" placeholder="Password" (click)="emptyERR()">
+                </div>
+            </div>
+            <br> <br>
+            <button (click)="Authentication('Login')" type="submit">SIGN IN</button>
+            <!-- <button (click)="Authentication('Signup')" type="submit">Signup</button> -->
+        </form>
+        <form *ngIf="issignup" [formGroup]="submitForm" action="" >
+            <div class="credential">
+                <div class="inpEmail">
+                    <div class="errmsg">{{nameERR}}</div>
+                    <input  id="fullname" formControlName="name" type="email" autocomplete="off" placeholder="Fullname" (click)="emptyERR()">
+                </div>
+                <div class="inpEmail">
+                    <div class="errmsg">{{emailERR}}</div>
+                    <input  id="username" formControlName="email" type="email" autocomplete="off" placeholder="Username" (click)="emptyERR()">
+                </div>
+                <div class="inppass">
+                    <div  class="errmsg">{{passwordERR}}</div>
+                    <input formControlName="password" type="password" autocomplete="off" placeholder="Password" (click)="emptyERR()">
+                </div>
+            </div>
+            <br> <br>
+            <!-- <button (click)="Authentication('Login')" type="submit">SIGN UP</button> -->
+            <button (click)="Authentication('Signup')" type="submit">SIGN UP</button>
+        </form>
+        <span><h4>{{invalidCred}}</h4></span>
+    </div>
+</body>

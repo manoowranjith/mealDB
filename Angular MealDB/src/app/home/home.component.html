@@ -1,0 +1,20 @@
+<body>
+    <div class="nav">
+        <i (click)="logout()" class="fas fa-sign-out-alt fa-2x"></i>
+    </div>
+    
+    <h1>Feeling Hungry ?...</h1>
+<input [(ngModel)]="searchStr" (keyup)="getMeal()" type="text" placeholder="Enter the ingredient ... ">
+
+<div class="food">
+    <div class="food_individual" *ngFor="let recepie of food">
+        <img src={{recepie.strMealThumb}} alt="" srcset="">
+        <h3>{{recepie.strMeal}}</h3>
+        <button (click)="getMealRecepie(recepie.idMeal)">view recepie</button>
+    </div>
+</div>
+<div class="no_result" *ngIf="food ==  null">
+    <h1>No Results Found ... </h1>
+</div>
+</body>
+

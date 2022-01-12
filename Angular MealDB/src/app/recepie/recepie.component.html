@@ -1,0 +1,12 @@
+<div class="nav">
+    <a routerLink="/home"> <i class="fas fa-arrow-left fa-2x"></i></a>
+    <i (click)="logout()" class="fas fa-sign-out-alt fa-2x"></i>
+</div>
+<div class="recepieDetails">
+    <div *ngFor="let recepie of recepieDetails">
+        <h1>{{recepie.name}}</h1>
+        <img src={{recepie.img}} alt="" srcset="">
+        <h3>{{recepie.steps}}</h3>
+        <a class="yt" href={{recepie.yt}}>WATCH ON YOUTUBE <i class="fab fa-youtube"></i></a>
+    </div>
+</div>
